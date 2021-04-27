@@ -1,21 +1,10 @@
 from flask import Flask, request
-from flask_mail import Mail, Message
 
 app = Flask(__name__)
-app.config['MAIL_SERVER']='smtp.gmail.com'
-app.config['MAIL_PORT'] = 465
-app.config['MAIL_USERNAME'] = 'biobuy.official@gmail.com'
-app.config['MAIL_PASSWORD'] = 'biobuy2020'
-app.config['MAIL_USE_TLS'] = False
-app.config['MAIL_USE_SSL'] = True
-mail = Mail(app)
-
 
 @app.route('/')
 def hello_world():
-    msg = Message('Hello', sender='yourId@gmail.com', recipients=['someone1@gmail.com'])
-    msg.body = "This is the email body"
-    mail.send(msg)
+
     return "Sent"
 
 @app.route('/data', methods=['POST'])
