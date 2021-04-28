@@ -4,7 +4,6 @@ app = Flask(__name__)
 
 @app.route('/')
 def hello_world():
-
     return "Sent"
 
 @app.route('/data', methods=['POST'])
